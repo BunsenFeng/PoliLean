@@ -44,6 +44,10 @@ Important: Run this step on your local computer. We need to use `selenium` to si
 ### Partisan Corpora and Language Models
 For partisan news corpora, visit [POLITICS](https://github.com/launchnlp/politics). For partisan social media corpora, please reach out to `shangbin@cs.washington.edu` to ask for access. Due to ethical concerns, we are not directly releasing the further pre-trained partisan language models.
 
+### Downstream Tasks
+Hate speech detection: [link](https://github.com/michaelmilleryoder/hate_speech_identities)
+Fake news detection: [link](https://aclanthology.org/P17-2067/)
+
 ### Citation
 If you find this repo useful, please cite our paper:
 ```
