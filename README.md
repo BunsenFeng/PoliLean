@@ -7,12 +7,16 @@ Any environment with the HuggingFace Transformers that support pipelines should 
 
 #### Step 0: Sanity Check
 We mainly implement things with the text generation pipeline of Huggingface Transformers. Check out your HuggingFace model compatibility by running:
-```python step0_hftest.py --model <your_model> --device <your_device>```
-If you see `success!` printer out, you are good to go. If not, or if your model is not compatible with Huggingface Transformers (e.g. OpenAI models), you can skip this step. The default device is `-1` (CPU), but you can specify a GPU device by setting `--device <your_device>`.
+```
+python step0_hftest.py --model <your_model> --device <your_device>
+```
+If you see `success!` printed out, you are good to go. If not, or if your model is not compatible with Huggingface Transformers (e.g. OpenAI models), you can skip this step. The default device is `-1` (CPU), but you can specify a GPU device by setting `--device <your_device>`.
 
 #### Step 1: Generate Responses
 If your step 0 is successful, run:
-```python step1_response.py --model <your_model> --device <your_device>```
+```
+python step1_response.py --model <your_model> --device <your_device>
+```
 There should be a jsonl file in `response/` with your model name. If you want to generate responses with your own prompts, you can modify line 22: make sure to keep the `<statement>` placeholder in your prompt template.
 
 Note that 1) we only prompt once for clarity and efficiency, while the paper used an average of 5 runs; 2) we used the default prompt in the script, while different models might work better with different prompts to better elicit political opinions.
@@ -21,7 +25,9 @@ If your model is not compatible with Huggingface Transformers, feel free to get 
 
 #### Step 2: Get Agree/Disagree Scores
 We use an NLI-based model to evaluate whether the response agrees or disagrees with the political statement. Run:
-```python step2_scoring.py --model <your_model> --device <your_device>```
+```
+python step2_scoring.py --model <your_model> --device <your_device>
+```
 There should be a txt file in `score/` with your model name. Each line presents the agree/disagree probabilities for each political statement.
 
 #### Step 3: Get Political Leaning with the Political Compass Test
