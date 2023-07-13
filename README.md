@@ -19,7 +19,7 @@ python step1_response.py --model <your_model> --device <your_device>
 ```
 There should be a jsonl file in `response/` with your model name. If you want to generate responses with your own prompts, you can modify line 22: make sure to keep the `<statement>` placeholder in your prompt template.
 
-Note that 1) we only prompt once for clarity and efficiency, while the paper used an average of 5 runs; 2) we used the default prompt in the script, while different models might work better with different prompts to better elicit political opinions. These two factors, among others (e.g. LM checkpoint update, etc.), that might lead to result varaition.
+Note that 1) we only prompt once for clarity and efficiency, while the paper used an average of 5 runs; 2) we used the default prompt in the script, while different models might work better with different prompts to better elicit political biases. These two factors, among others (e.g. LM checkpoint update, etc.), that might lead to result varaition.
 
 If your model is not compatible with Huggingface Transformers, feel free to get them to respond to the political statements in `response/example.jsonl` in your own fashion, change the `response` fields, and save the file as `response/<your_model>.jsonl`.
 
