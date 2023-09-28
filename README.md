@@ -52,10 +52,20 @@ Fake news detection: [link](https://aclanthology.org/P17-2067/)
 ### Citation
 If you find this repo useful, please cite our paper:
 ```
-@article{feng2023pretraining,
-  title={From Pretraining Data to Language Models to Downstream Tasks: Tracking the Trails of Political Biases Leading to Unfair NLP Models},
-  author={Feng, Shangbin and Park, Chan Young and Liu, Yuhan and Tsvetkov, Yulia},
-  journal={arXiv preprint arXiv:2305.08283},
-  year={2023}
+@inproceedings{feng-etal-2023-pretraining,
+    title = "From Pretraining Data to Language Models to Downstream Tasks: Tracking the Trails of Political Biases Leading to Unfair {NLP} Models",
+    author = "Feng, Shangbin  and
+      Park, Chan Young  and
+      Liu, Yuhan  and
+      Tsvetkov, Yulia",
+    booktitle = "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2023",
+    address = "Toronto, Canada",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.acl-long.656",
+    doi = "10.18653/v1/2023.acl-long.656",
+    pages = "11737--11762",
+    abstract = "Language models (LMs) are pretrained on diverse data sources{---}news, discussion forums, books, online encyclopedias. A significant portion of this data includes facts and opinions which, on one hand, celebrate democracy and diversity of ideas, and on the other hand are inherently socially biased. Our work develops new methods to (1) measure media biases in LMs trained on such corpora, along social and economic axes, and (2) measure the fairness of downstream NLP models trained on top of politically biased LMs. We focus on hate speech and misinformation detection, aiming to empirically quantify the effects of political (social, economic) biases in pretraining data on the fairness of high-stakes social-oriented tasks. Our findings reveal that pretrained LMs do have political leanings which reinforce the polarization present in pretraining corpora, propagating social biases into hate speech predictions and media biases into misinformation detectors. We discuss the implications of our findings for NLP research and propose future directions to mitigate unfairness.",
 }
 ```
