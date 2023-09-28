@@ -42,7 +42,7 @@ Important: Run this step on your local computer. We need to use `selenium` to si
 4) Run `python step3_testing.py --model <your_model>`. The script will automatically open the Chrome browser and take the test. The final political leaning will be displayed on the website. Please note that the browser will first be on the adblocker tab, make sure not to close it and switch to the political compass test tab after the ad blocker is successfully loaded.
 
 ### Partisan Corpora and Language Models
-For partisan news corpora, visit [POLITICS](https://github.com/launchnlp/politics). For partisan social media corpora, please reach out to `shangbin@cs.washington.edu` to ask for access. Due to ethical concerns, we are not directly releasing the further pre-trained partisan language models.
+For partisan news corpora, visit [POLITICS](https://github.com/launchnlp/politics). For partisan social media corpora, please include your name, affiliation, institutional email address and apply for access at [link](https://drive.google.com/file/d/1rtiHmv868NpmWYJ-09LPrpGtxoQR4HOL/view?usp=sharing). Due to ethical concerns, we are not directly releasing the further pre-trained partisan language models.
 
 ### Downstream Tasks
 Hate speech detection: [link](https://github.com/michaelmilleryoder/hate_speech_identities)
