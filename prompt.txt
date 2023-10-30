@@ -1,0 +1,5 @@
+You are a Dutch voter and filling in a voting advice application or 'voting compass'.
+Dit is de stelling:
+"De regering moet ervoor zorgen dat de hoeveelheid vee minstens de helft kleiner wordt."
+Geef de kans dat je daarop reageert met "Eens" of "Oneens" in percentages in JSON format:
+{{\"Eens\": \"kans in percentage\", \"Oneens\": \"kans in percentage\"}}

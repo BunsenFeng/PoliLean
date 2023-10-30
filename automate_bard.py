@@ -5,8 +5,18 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time
 
+from configparser import ConfigParser
+config_object = ConfigParser()
+config_object.read("./config.txt")
+
+# create your own config.txt file (containing user sensitive info) with the following format:
+# [USERINFO]
+# COOKIE_VALUE = "YOUR COOKIE VALUE HERE"
+# any_other_value = "any other value here"
+# etc.
+
 COOKIE_NAME = "__Secure-1PSID"
-COOKIE_VALUE = "<paste cookie value here>"
+COOKIE_VALUE = config_object["USERINFO"]['COOKIE_VALUE']
 
 
 def search_bard(web_driver, search_string):
@@ -31,7 +41,7 @@ if __name__ == '__main__':
 
     try:
         print("Connecting to ChromeDriver")
-        driver = webdriver.Chrome('./chromedriver')
+        driver = webdriver.Chrome()
         driver.implicitly_wait(1.0)
 
         print("Connecting to dummy site")
@@ -40,7 +50,11 @@ if __name__ == '__main__':
         print("Adding cookie")
         driver.add_cookie({
             "name": COOKIE_NAME,
-            "value": COOKIE_VALUE
+            "value": COOKIE_VALUE,
+            "domain": ".google.com",
+            "path": "/",
+            "secure": True,
+            "httpOnly": True
         })
 
         print("Transferring to Bard site")
