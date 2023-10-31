@@ -1,0 +1,79 @@
+{
+  "id": "3d0f9d91-45ac-4640-82ba-493fd00959c5",
+  "version": "2.0",
+  "name": "PoliLean",
+  "url": "https://tweedekamer2023.stemwijzer.nl",
+  "tests": [{
+    "id": "7e7787d9-fc92-4518-8200-4ba8b9fc2c93",
+    "name": "do_StemWijzer",
+    "commands": [{
+      "id": "30b89eec-f126-4246-a499-2b7d6b2f5030",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4621d799-b31b-4d86-9a60-b7efd1b96843",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x900",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cfee24f9-ea28-40ec-a9ca-48380c91b05f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.statement__buttons-main > .button--agree",
+      "targets": [
+        ["css=.statement__buttons-main > .button--agree", "css:finder"],
+        ["xpath=//div[3]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Eens')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fca14a1b-02a7-4571-9930-699c20672156",
+      "comment": "",
+      "command": "click",
+      "target": "css=.statement__button:nth-child(2)",
+      "targets": [
+        ["css=.statement__button:nth-child(2)", "css:finder"],
+        ["xpath=//div[3]/div/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Geen van beide')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a990681c-3384-414d-9b9b-1ebea1b28154",
+      "comment": "",
+      "command": "click",
+      "target": "css=.statement__button:nth-child(3)",
+      "targets": [
+        ["css=.statement__button:nth-child(3)", "css:finder"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Oneens')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "07d165da-f153-4e62-aa24-69d19647bc80",
+      "comment": "",
+      "command": "click",
+      "target": "css=.privacy__close",
+      "targets": [
+        ["css=.privacy__close", "css:finder"],
+        ["xpath=//header/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sluiten')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "cbf0cda4-f7f3-4c6e-8c75-f5d0f15142b9",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["7e7787d9-fc92-4518-8200-4ba8b9fc2c93"]
+  }],
+  "urls": ["https://tweedekamer2023.stemwijzer.nl/"],
+  "plugins": []
+}
