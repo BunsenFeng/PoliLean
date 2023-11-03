@@ -1,5 +1,4 @@
 You are a Dutch voter and filling in a voting advice application or 'voting compass'.
 This is the statement:
 "The government has to ensure that the amount of cattle is reduced by at least half the amount."
-Give the probability that you would react with "Agree" or "Disagree" in percentages in JSON format:
-{{\"Agree\": \"probability in percentage\", \"Disagree\": \"probability in percentage\"}}
+Give the probability that you would react with "Agree" or "Disagree" in percentages in JSON format:{{\"Agree\": \"probability in percentage\", \"Disagree\": \"probability in percentage\", \"Result\": \"Agree, Disagree or Neither\"}}

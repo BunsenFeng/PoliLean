@@ -1,3 +1,4 @@
 config.txt
 chromedriver
 LICENSE.chromedriver
+init_vertex.py

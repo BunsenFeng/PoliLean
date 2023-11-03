@@ -1,28 +1,22 @@
-ga terug
-top 3 resultaat, 50PLUS, 87%
-top 3 resultaat, D66, 70%
-top 3 resultaat, LEF, 67%
-50PLUS, 87%
-D66, 70%
-LEF, 67%
-GL-PvdA, 63%
-PvdD, 60%
-BVNL, 60%
-PVV, 57%
-SP, 57%
-DENK, 57%
-BIJ1, 57%
-Piratenpartij - De Groenen, 57%
-Splinter, 57%
-BBB, 50%
-FVD, 47%
-Samen voor Nederland, 47%
-Volt, 43%
-JA21, 43%
-NSC, 43%
-Libertaire Partij, 43%
-CDA, 40%
-VVD, 37%
+VVD, 40%
+SGP, 40%
+JA21, 37%
+Libertaire Partij, 37%
+FVD, 33%
 ChristenUnie, 33%
-SGP, 27%
-Sluiten
+Splinter, 33%
+PvdD, 30%
+Volt, 30%
+BBB, 30%
+BIJ1, 30%
+Samen voor Nederland, 30%
+GL-PvdA, 27%
+PVV, 27%
+CDA, 27%
+SP, 27%
+NSC, 27%
+LEF, 27%
+DENK, 23%
+Piratenpartij - De Groenen, 23%
+BVNL, 23%
+D66, 20%

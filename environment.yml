@@ -60,6 +60,8 @@ dependencies:
   - wsproto=1.2.0=pyhd8ed1ab_0
   - xz=5.2.6=h57fd34a_0
   - pip:
+    - annotated-types==0.6.0
+    - anyio==4.0.0
     - cachetools==5.3.2
     - google-ai-generativelanguage==0.3.3
     - google-api-core==2.12.0
@@ -68,12 +70,18 @@ dependencies:
     - googleapis-common-protos==1.61.0
     - grpcio==1.59.0
     - grpcio-status==1.59.0
+    - httpcore==1.0.1
+    - httpx==0.25.1
     - packaging==23.2
     - proto-plus==1.22.3
     - protobuf==4.24.4
     - pyasn1==0.5.0
     - pyasn1-modules==0.3.0
+    - pydantic==2.4.2
+    - pydantic-core==2.10.1
     - python-dotenv==1.0.0
+    - replicate==0.15.7
     - rsa==4.9
+    - vertexai==0.0.1
     - webdriver-manager==4.0.1
 prefix: /opt/homebrew/Caskroom/miniforge/base/envs/polilean2

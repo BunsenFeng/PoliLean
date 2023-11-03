@@ -2,17 +2,48 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time
+from stemwijzer_02 import get_results, stemwijzer
+import json
 
 def take_stemwijzer(web_driver):
     
     def findclickandwait(element):
         web_driver.find_element(by=By.CSS_SELECTOR, value=element).click()
-        time.sleep(2) # wait for the next page to load
+        time.sleep(1.5) # wait for the next page to load
     
-    # create a responses array with only 'eens' for testing
-    responses = ["eens"] * 30
+    # close the privacy statement
+    findclickandwait(".privacy__close")
 
-    # responses = stemwijzer()
+    # # for thirty repeats / statements
+    # for i in range(30):
+    #     # get the statement text from the title element
+    #     title = web_driver.find_element(by=By.CSS_SELECTOR, value=".statement-title").text
+    #     print(title)
+    #     response_text = stemwijzer(title)
+    #     # get the json response from the response text that is enclosed between { and }
+    #     response_text = response_text[response_text.find("{"):response_text.find("}")+1]
+    #     # and parse it to a dictionary
+    #     response_text = eval(response_text)
+    #     print(response_text["Result"])
+
+    #     if response_text["Result"] == "Agree":
+    #         findclickandwait(".statement__buttons-main > .button--agree") 
+    #     elif response_text["Result"] == "Disagree":
+    #         findclickandwait(".statement__button:nth-child(2)")
+    #     elif response_text["Result"] == "Neither":
+    #         findclickandwait(".statement__button:nth-child(3)")
+    #     else:
+    #         findclickandwait(".statement__buttons > .statement__skip")
+
+    # create a responses array with only 'eens' for testing
+    # responses = ["eens"] * 30
+
+    # responses = get_results()
+
+    # import results.json as responses array
+    with open('results.json') as json_file:
+        responses = json.load(json_file)
+    
     for response in responses:
         if response == "eens":
             findclickandwait(".statement__buttons-main > .button--agree") 
@@ -20,6 +51,8 @@ def take_stemwijzer(web_driver):
             findclickandwait(".statement__button:nth-child(2)") 
         elif response == "geen_van_beide":
             findclickandwait(".statement__button:nth-child(3)")
+        elif response == "overslaan":
+            findclickandwait(".statement__buttons > .statement__skip")
         else:
             raise Exception("Invalid response")
 
@@ -42,25 +75,36 @@ def take_stemwijzer(web_driver):
         findclickandwait(".options-header__next") 
         print("naar resultaat")
 
+    try:
+        findclickandwait(".shootout__close") # sluit de eventuele vraag voor extra stellingen
+        print("geen extra stellingen")
+    except:
+        pass
+
     # Get the results from the page and store them in a text file
     # Locate the buttons
     buttons = web_driver.find_elements(by=By.XPATH, value='//button[@aria-label]')
+    # print("the buttons are:")
+    # print(buttons)
 
     # Extract information
     party_info = []
     for button in buttons:
         label = button.get_attribute('aria-label')
         party_info.append(label)
-
+    
+    party_info = party_info[4:-1] # remove the first 4 and last 1 lines (they're not the main list of results)
+    # print("the party_info is:")
+    # print(party_info)
+    
     # Export to text file
     with open('party_info.txt', 'w') as file:
-        for info in party_info:
-            file.write(f"{info}\n")
-
-    # Close the WebDriver instance
-    driver.quit()
+            for info in party_info:
+                file.write(f"{info}\n")
 
     return party_info
+
+
 
 # Main Script
 if __name__ == '__main__':
@@ -78,7 +122,7 @@ if __name__ == '__main__':
         print("The LLM leans towards:", party_info)
 
     except Exception as e:
-        # DO NOT DO THIS. Use proper exception handling!
+        # Change: Use proper exception handling!
         print(e)
 
     finally:

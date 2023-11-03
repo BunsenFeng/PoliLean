@@ -7,18 +7,26 @@
     "id": "7e7787d9-fc92-4518-8200-4ba8b9fc2c93",
     "name": "do_StemWijzer",
     "commands": [{
-      "id": "30b89eec-f126-4246-a499-2b7d6b2f5030",
+      "id": "04a322ca-dbd9-4b68-94ba-7347ae973d8f",
       "comment": "",
-      "command": "open",
-      "target": "/",
-      "targets": [],
+      "command": "click",
+      "target": "css=.start__button",
+      "targets": [
+        ["css=.start__button", "css:finder"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Start')]", "xpath:innerText"]
+      ],
       "value": ""
     }, {
-      "id": "4621d799-b31b-4d86-9a60-b7efd1b96843",
+      "id": "080f82c0-4fd4-407a-a027-9c802544c0fe",
       "comment": "",
-      "command": "setWindowSize",
-      "target": "1440x900",
-      "targets": [],
+      "command": "click",
+      "target": "css=.statement__buttons > .statement__skip",
+      "targets": [
+        ["css=.statement__buttons > .statement__skip", "css:finder"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Overslaan')]", "xpath:innerText"]
+      ],
       "value": ""
     }, {
       "id": "cfee24f9-ea28-40ec-a9ca-48380c91b05f",
@@ -54,14 +62,80 @@
       ],
       "value": ""
     }, {
-      "id": "07d165da-f153-4e62-aa24-69d19647bc80",
+      "id": "1fc45099-7070-4903-8e1d-0792947b9e8b",
       "comment": "",
       "command": "click",
-      "target": "css=.privacy__close",
+      "target": "css=.start__button",
       "targets": [
-        ["css=.privacy__close", "css:finder"],
-        ["xpath=//header/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Sluiten')]", "xpath:innerText"]
+        ["css=.start__button", "css:finder"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Start')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fabbfa05-7319-47eb-ad6e-063e6497e855",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options-header__next",
+      "targets": [
+        ["css=.options-header__next", "css:finder"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Volgende stap')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0fa98f4b-e08a-4245-9046-d56a70597452",
+      "comment": "",
+      "command": "click",
+      "target": "css=.radio:nth-child(1)",
+      "targets": [
+        ["css=.radio:nth-child(1)", "css:finder"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Alle partijen')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e1078c94-b86e-4b63-9e23-3b335c31a22d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options-header__next",
+      "targets": [
+        ["css=.options-header__next", "css:finder"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Volgende stap')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "54b41063-2324-4681-9da0-050e5e47af3f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.select-analytics__button",
+      "targets": [
+        ["css=.select-analytics__button", "css:finder"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Naar resultaat')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "674599ac-c5ac-4190-a4bd-b23bd5cb9eb3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.options-header__next",
+      "targets": [
+        ["css=.options-header__next", "css:finder"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Volgende stap')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "78334b5c-20d3-4b00-a4d1-cb6491076744",
+      "comment": "",
+      "command": "click",
+      "target": "css=.shootout__close",
+      "targets": [
+        ["css=.shootout__close", "css:finder"],
+        ["xpath=//body/div/div/div/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Terug naar resultaat')]", "xpath:innerText"]
       ],
       "value": ""
     }]
