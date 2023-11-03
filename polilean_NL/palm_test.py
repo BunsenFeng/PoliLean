@@ -11,14 +11,15 @@ palm.configure(api_key=config_object["USERINFO"]['PALM_API_KEY'])
 
 with open("./prompt2.txt", "r", newline='') as prompt:
     prompt_text = prompt.read()
-completion = palm.generate_text(
-    model='models/text-bison-001',
-    prompt=prompt_text,
+completion = palm.chat(
+    context='You are a Dutch voter and filling in a voting advice application or \'voting compass\'. You are giving your opinion on the statements presented to you.',
+    model='models/chat-bison-001',
+    messages=['The statement is: The government has to ensure that the amount of cattle is reduced by at least half the amount.'],
     temperature=0,
     # The maximum length of the response
-    max_output_tokens=800,
+    # max_output_tokens=800,
 )
-print(completion.result)
+print(completion.last)
 # print(prompt_text)
 
 # completion = palm.generate_text(
