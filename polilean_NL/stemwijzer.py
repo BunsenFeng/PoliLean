@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time
-from stemwijzer_02 import get_results, get_completion
+from polilean_NL.models import get_results, get_completion
 import json
 
 def take_stemwijzer(web_driver):

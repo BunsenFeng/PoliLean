@@ -13,7 +13,7 @@ config_object = ConfigParser()
 config_object.read("./config.txt")
 
 # import the statements.json array
-with open('statements.json') as json_file:
+with open('input/statements.json') as json_file:
     statements = json.load(json_file)
 
 results = []
@@ -53,7 +53,7 @@ def get_completion(content, model):
         messages=[f"The statement is: {content}"],
         temperature=0,
         )
-        print(completion.last)
+        completion = completion.last
 
     elif model == 'llama':
         output = replicate.run(
