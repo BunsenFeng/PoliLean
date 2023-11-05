@@ -2,10 +2,16 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time
-from polilean_NL.models import get_results, get_completion
+# from models import get_results, get_completion
 import json
 
-def take_stemwijzer(web_driver):
+# import the statements.json array
+# with open('input/statements.json') as json_file:
+#     statements = json.load(json_file)
+
+models = ["gpt", "palm", "llama"]
+
+def take_stemwijzer(web_driver, model):
     
     def findclickandwait(element):
         web_driver.find_element(by=By.CSS_SELECTOR, value=element).click()
@@ -14,17 +20,25 @@ def take_stemwijzer(web_driver):
     # close the privacy statement
     findclickandwait(".privacy__close")
 
+    # ***
+    # the following code piece would take the statements directly from the website, but it would be prone to errors
+    # in our use case we are sure of the statements that we want to process
+    # it could be a way to scrape statements for the next election
+    # ***
     # # for thirty repeats / statements
     # for i in range(30):
     #     # get the statement text from the title element
     #     title = web_driver.find_element(by=By.CSS_SELECTOR, value=".statement-title").text
     #     print(title)
     #     response_text = stemwijzer(title)
+
+    #     *** this piece of code assumed that we would ask the model directly for their probability of agreeing or disagreeing
     #     # get the json response from the response text that is enclosed between { and }
     #     response_text = response_text[response_text.find("{"):response_text.find("}")+1]
     #     # and parse it to a dictionary
     #     response_text = eval(response_text)
     #     print(response_text["Result"])
+    #     ***
 
     #     if response_text["Result"] == "Agree":
     #         findclickandwait(".statement__buttons-main > .button--agree") 
@@ -35,13 +49,13 @@ def take_stemwijzer(web_driver):
     #     else:
     #         findclickandwait(".statement__buttons > .statement__skip")
 
-    # create a responses array with only 'eens' for testing
+    # ***
+    # creating a responses array with only 'eens' for testing
     # responses = ["eens"] * 30
-
-    # responses = get_results()
+    # ***
 
     # import results.json as responses array
-    with open('results.json') as json_file:
+    with open(f'{model}_opinions.json') as json_file:
         responses = json.load(json_file)
     
     for response in responses:
@@ -98,33 +112,33 @@ def take_stemwijzer(web_driver):
     # print(party_info)
     
     # Export to text file
-    with open('party_info.txt', 'w') as file:
+    with open(f'{model}_leans.txt', 'w') as file:
             for info in party_info:
                 file.write(f"{info}\n")
 
     return party_info
 
-
-
 # Main Script
 if __name__ == '__main__':
 
-    try:
-        print("Connecting to ChromeDriver")
-        driver = webdriver.Chrome()
-        driver.implicitly_wait(1.0)
+    for model in models:
 
-        print("Connecting to dummy site")
-        driver.get("https://tweedekamer2023.stemwijzer.nl/#/stelling/1/de-regering-moet-ervoor-zorgen-dat-de-hoeveelheid-vee-minstens-de-helft-kleiner-wordt")
-        time.sleep(2)
+        try:
+            print("Connecting to ChromeDriver")
+            driver = webdriver.Chrome()
+            driver.implicitly_wait(1.0)
 
-        party_info = take_stemwijzer(driver)
-        print("The LLM leans towards:", party_info)
+            print("Connecting to dummy site")
+            driver.get("https://tweedekamer2023.stemwijzer.nl/#/stelling/1/de-regering-moet-ervoor-zorgen-dat-de-hoeveelheid-vee-minstens-de-helft-kleiner-wordt")
+            time.sleep(2)
 
-    except Exception as e:
-        # Change: Use proper exception handling!
-        print(e)
+            party_info = take_stemwijzer(driver, model)
+            print("The LLM leans towards:", party_info)
 
-    finally:
-        print("Closing ChromeDriver")
-        driver.close()
+        except Exception as e:
+            # Change: Use proper exception handling!
+            print(e)
+
+        finally:
+            print("Closing ChromeDriver")
+            driver.close()

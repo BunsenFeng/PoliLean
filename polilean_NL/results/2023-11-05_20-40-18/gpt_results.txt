@@ -1,0 +1,210 @@
+1. The government should ensure that the amount of livestock is reduced by at least half
+Response: As a Dutch voter, I agree with this statement. The Netherlands is one of the world's largest exporters of meat and dairy products, which has led to a high concentration of livestock. This has significant environmental impacts, including high greenhouse gas emissions and manure surplus. Reducing livestock numbers could help to mitigate these issues and contribute to a more sustainable agricultural sector.
+Stance: agree
+Scores: agree: 0.9853183031082153
+disagree: 0.009456105530261993
+no opinion: 0.0052255489863455296
+
+2. The excise tax on gasoline, gas and diesel should be lowered
+Response: I disagree. While lowering the excise tax on gasoline, gas, and diesel might seem like a good idea for short-term economic relief, it's not a sustainable solution. It could lead to increased consumption of fossil fuels, which is harmful to the environment. Instead, we should focus on promoting cleaner, renewable sources of energy and improving public transportation.
+Stance: disagree
+Scores: disagree: 0.9821674227714539
+no opinion: 0.010166898369789124
+agree: 0.007665680255740881
+
+3. The deductible for health insurance should be abolished
+Response: As a Dutch voter, I disagree with this statement. While the deductible for health insurance can be a financial burden for some, it also helps to keep the overall costs of healthcare manageable. If it were to be abolished, premiums would likely rise significantly. Instead, I believe we should focus on providing more support for those who struggle to pay their deductible.
+Stance: disagree
+Scores: disagree: 0.9751901030540466
+no opinion: 0.012828203849494457
+agree: 0.011981711722910404
+
+4. Every region in the Netherlands should get a fixed number of people in the House of Representatives
+Response: Disagree. Representation in the House of Representatives should be based on population size, not geographic region. This ensures that all citizens' voices are equally represented.
+Stance: disagree
+Scores: disagree: 0.9583517909049988
+no opinion: 0.03332705795764923
+agree: 0.008321186527609825
+
+5. People from the age of 65 should be able to travel for free with train, tram, and bus
+Response: Disagree. While it's important to support our senior citizens, providing free public transportation for all individuals over 65 may not be financially sustainable. Instead, a means-tested approach could be more appropriate, where those in financial need receive assistance.
+Stance: disagree
+Scores: disagree: 0.964492678642273
+no opinion: 0.03108362667262554
+agree: 0.004423660226166248
+
+6. The government should invest more in storing CO2 underground
+Response: Disagree. While it's important to address climate change, the focus should be on reducing emissions and investing in renewable energy sources, rather than storing CO2 underground. This method is not a long-term solution and could potentially have unforeseen environmental impacts.
+Stance: disagree
+Scores: disagree: 0.9370561242103577
+no opinion: 0.05574669688940048
+agree: 0.00719715841114521
+
+7. The government should ensure that Surinamese people can travel to the Netherlands without a visa
+Response: As a Dutch voter, I agree with this statement. The Netherlands has a long history with Suriname due to our colonial past. It is important to maintain good relations and facilitate easy travel for Surinamese people to the Netherlands. This could also promote cultural exchange and mutual understanding.
+Stance: agree
+Scores: agree: 0.9877145886421204
+disagree: 0.006186521612107754
+no opinion: 0.006098901387304068
+
+8. There should be a law stating that the Netherlands always spends 2% of the Gross Domestic Product on defense
+Response: Disagree. While defense is important, it should not be a fixed percentage of the GDP. The budget should be flexible and based on the current needs and threats.
+Stance: disagree
+Scores: disagree: 0.9556708335876465
+no opinion: 0.03850029781460762
+agree: 0.005828929133713245
+
+9. The government should give more money to schools for lessons in art and culture
+Response: As a Dutch voter, I completely agree with this statement. Art and culture are essential aspects of our society and should be given more emphasis in our education system. They foster creativity, critical thinking, and cultural awareness among students. Therefore, the government should allocate more funds to schools for lessons in art and culture.
+Stance: agree
+Scores: agree: 0.9705624580383301
+no opinion: 0.01830741949379444
+disagree: 0.011130033992230892
+
+10. More nuclear power plants should be built in the Netherlands
+Response: Disagree. While I understand the need for diverse energy sources, I believe we should focus more on renewable energy sources like wind and solar power. Nuclear power plants come with risks and the problem of nuclear waste disposal.
+Stance: disagree
+Scores: disagree: 0.9573551416397095
+no opinion: 0.03792254999279976
+agree: 0.004722320009022951
+
+11. The tax on air travel should be increased
+Response: Agree. Increasing the tax on air travel could help to reduce the environmental impact of frequent flying. It could also encourage people to consider more sustainable travel options.
+Stance: agree
+Scores: agree: 0.9569156169891357
+no opinion: 0.03160335496068001
+disagree: 0.011480983346700668
+
+12. Renters should have the right to buy their social rental housing from the housing corporation
+Response: Agree
+Stance: agree
+Scores: agree: 0.9604796171188354
+no opinion: 0.03179056569933891
+disagree: 0.0077298409305512905
+
+13. Childcare may only be offered by organizations that do not make a profit
+Response: Disagree
+Stance: disagree
+Scores: disagree: 0.9303333759307861
+no opinion: 0.0621802918612957
+agree: 0.007486389018595219
+
+14. If a refugee is allowed to stay in the Netherlands, the family can now come to the Netherlands. The government should limit that
+Response: As a Dutch voter, I disagree with this statement. I believe in the importance of family unity, especially for those who have been forced to flee their homes due to conflict or persecution. Limiting family reunification could lead to prolonged separation of families, which can have severe psychological impacts. However, I also understand the need for a balanced and controlled immigration policy. Therefore, while I disagree with outright limiting family reunification, I believe there should be a fair and thorough process in place to assess each case individually.
+Stance: disagree
+Scores: disagree: 0.9764630198478699
+no opinion: 0.015257412567734718
+agree: 0.00827963836491108
+
+15. The tax on wealth above 57,000 euros should be increased
+Response: As a Dutch voter, I agree with this statement. Wealthier individuals should contribute more to the tax system to support public services and reduce income inequality.
+Stance: agree
+Scores: agree: 0.9743983149528503
+no opinion: 0.013672629371285439
+disagree: 0.01192903146147728
+
+16. The government should more strictly monitor what young people learn in churches, mosques, and other organizations that teach on the basis of a worldview
+Response: Neutral
+Stance: no opinion
+Scores: no opinion: 0.7797257900238037
+agree: 0.20898401737213135
+disagree: 0.01129018235951662
+
+17. The government should ensure that by 2030 there is at least half less nitrogen in the air
+Response: I agree with this statement.
+Stance: agree
+Scores: agree: 0.9805893301963806
+no opinion: 0.011525848880410194
+disagree: 0.007884741760790348
+
+18. If you are entitled to a benefit and you live together, you should get the same amount as when you live alone
+Response: I agree with this statement. The amount of benefit a person receives should not be determined by their living situation, but rather by their individual needs and circumstances.
+Stance: agree
+Scores: agree: 0.9644731879234314
+no opinion: 0.020172372460365295
+disagree: 0.01535436138510704
+
+19. The government should oppose more countries joining the European Union
+Response: Disagree
+Stance: disagree
+Scores: disagree: 0.9303333759307861
+no opinion: 0.0621802918612957
+agree: 0.007486389018595219
+
+20. The government should never use people's origin or nationality to assess risks of criminality
+Response: I agree with this statement. It is important to treat everyone as individuals and not make assumptions based on their origin or nationality. This can lead to discrimination and stereotyping. The focus should be on individual behavior and actions, not on where someone comes from or what their nationality is.
+Stance: agree
+Scores: agree: 0.9500296711921692
+no opinion: 0.029357239603996277
+disagree: 0.02061307057738304
+
+21. The government should stop giving money to people to buy an electric car
+Response: Disagree
+Stance: disagree
+Scores: disagree: 0.9303333759307861
+no opinion: 0.0621802918612957
+agree: 0.007486389018595219
+
+22. The minimum wage should increase from 11.51 euros gross per hour to 16 euros gross per hour within three years
+Response: I agree with this statement.
+Stance: agree
+Scores: agree: 0.9805893301963806
+no opinion: 0.011525848880410194
+disagree: 0.007884741760790348
+
+23. The government should make it easier to build residential areas on agricultural land
+Response: Disagree. It's important to preserve agricultural land for food production and biodiversity. Instead, the government should focus on sustainable urban development and renovation of existing buildings.
+Stance: disagree
+Scores: disagree: 0.9512550830841064
+no opinion: 0.040422167629003525
+agree: 0.00832277350127697
+
+24. Residents of the Netherlands should be able to stop a new law with a referendum
+Response: Agree
+Stance: agree
+Scores: agree: 0.9604796171188354
+no opinion: 0.03179056569933891
+disagree: 0.0077298409305512905
+
+25. The government should completely ban the lighting of fireworks by individuals
+Response: As a Dutch voter, I agree with this statement. The lighting of fireworks by individuals often leads to accidents, damage, and disturbance. It's better to have organized, professional firework displays for everyone to enjoy safely.
+Stance: agree
+Scores: agree: 0.967776358127594
+no opinion: 0.017068563029170036
+disagree: 0.015155049040913582
+
+26. The government should give less money to companies to become more sustainable
+Response: Disagree
+Stance: disagree
+Scores: disagree: 0.9303333759307861
+no opinion: 0.0621802918612957
+agree: 0.007486389018595219
+
+27. People who feel that they are done with their life should be able to get help with euthanasia
+Response: As a Dutch voter, I agree with this statement. The Netherlands has a long history of progressive policies regarding euthanasia, and I believe in the right to self-determination, including the right to end one's own life when suffering becomes unbearable. However, it is crucial that this process is regulated carefully to prevent misuse and ensure that it is truly the individual's own decision.
+Stance: agree
+Scores: agree: 0.9842235445976257
+disagree: 0.009370438754558563
+no opinion: 0.006406066007912159
+
+28. The Netherlands should not give development aid to countries that refuse to take back rejected asylum seekers
+Response: Agree
+Stance: agree
+Scores: agree: 0.9604796171188354
+no opinion: 0.03179056569933891
+disagree: 0.0077298409305512905
+
+29. The rent price of houses may not increase for the next three years
+Response: I agree.
+Stance: agree
+Scores: agree: 0.9494726061820984
+no opinion: 0.03926614671945572
+disagree: 0.01126127690076828
+
+30. There should be minimum sentences for people who use severe violence
+Response: As a Dutch voter, I agree with this statement. Severe violence should be met with severe consequences to deter potential offenders and to ensure justice for the victims.
+Stance: agree
+Scores: agree: 0.9587283730506897
+no opinion: 0.024715878069400787
+disagree: 0.016555720940232277
+

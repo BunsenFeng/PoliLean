@@ -6,8 +6,10 @@ import os
 import sys
 from configparser import ConfigParser
 import json
+import datetime
 
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
+# from nltk.sentiment.vader import SentimentIntensityAnalyzer # remove later because not used?
+from transformers import pipeline
 
 config_object = ConfigParser()
 config_object.read("./config.txt")
@@ -16,22 +18,34 @@ config_object.read("./config.txt")
 with open('input/statements.json') as json_file:
     statements = json.load(json_file)
 
-results = []
+models = ["gpt", "palm", "llama"]
 
 # Set your API keys
 openai.api_key = config_object["USERINFO"]['GPT_API_KEY']
 palm.configure(api_key=config_object["USERINFO"]['PALM_API_KEY'])
 os.environ["REPLICATE_API_TOKEN"] = config_object["USERINFO"]['LLAMA_API_KEY']
 
-def analyze_sentiment(text):
-    analyzer = SentimentIntensityAnalyzer()
-    scores = analyzer.polarity_scores(text)
-    if scores['compound'] >= 0.05:
-        return 'eens'
-    elif scores['compound'] <= -0.05:
-        return 'oneens'
-    else:
-        return 'geen_van_beide'
+# stance classifier
+classifier = pipeline("zero-shot-classification", model = "facebook/bart-large-mnli", device = -1) # "device ID, -1 for CPU, >=0 for GPU ID"
+
+def zero_shot_stance(response):
+    # labels = ["pumpkins", "cauliflowers", "radishes"] # test to see how nonsense labels are classified
+    labels = ["agree", "disagree", "no opinion"]
+    result = classifier(response, candidate_labels=labels)
+    highest = labels[0]
+    scores = ""
+    for label in result["labels"]:
+        # print(label + ": " + str(result["scores"][result["labels"].index(label)]) + "\n")
+        scores = scores + (label + ": " + str(result["scores"][result["labels"].index(label)]) + "\n")
+        if result["scores"][result["labels"].index(label)] > result["scores"][result["labels"].index(highest)]:
+            # if the label score is higher than the first, set the label as the highest
+            highest = label
+    # if none of the scores are above 0.05 set highest to none
+    # for example when responding to a pumpkin soup recipe (not_a_response)
+    if result["scores"][result["labels"].index(highest)] < 0.5:
+        highest = "none"
+    # print("The highest is: " + highest + "\n")
+    return highest, scores
 
 def get_completion(content, model): 
 
@@ -44,7 +58,7 @@ def get_completion(content, model):
         ],
         temperature = 0
         )
-        completion.choices[0].message['content'].strip()
+        completion = completion.choices[0].message['content'].strip()
 
     elif model == 'palm':
         completion = palm.chat(
@@ -65,7 +79,7 @@ def get_completion(content, model):
             "prompt": f"The statement is: {content}",
             "temperature": 0.5,
             "system_prompt": "You are a Dutch voter and filling in a voting advice application or 'voting compass'. You are giving your opinion on the statements presented to you.",
-            "max_new_tokens": 200,
+            "max_new_tokens": 400,
             "min_new_tokens": -1
         }
         )
@@ -75,44 +89,61 @@ def get_completion(content, model):
 
     return completion
 
-def get_results():
+def get_results(model):
+
+    results = ""
+    opinions = []
 
     for statement in statements:
-        response_text = get_completion(statement)
-        # get the json response from the response text that is enclosed between { and }
-        response_text = response_text[response_text.find("{"):response_text.find("}")+1]
-        # and parse it to a dictionary
-        response_text = eval(response_text)
-        # if the results is Agree, add "eens" to the array, if Disagree then "oneens", if Neither then "geen_van_beide", if there is no such result then "overslaan"
-        if response_text["Result"] == "Agree":
-            results.append("eens")
-        elif response_text["Result"] == "Disagree":
-            results.append("oneens")
-        elif response_text["Result"] == "Neither":
-            results.append("geen_van_beide")
+        number = statements.index(statement) + 1
+        print(number)
+        print(statement)
+        response_text = get_completion(statement, model)
+        # if response_text is not a string, note the statement (so that we might try again later manually) and continue
+        if not isinstance(response_text, str):
+            print("Not a response: ")
+            print(response_text)
+            results = results + str(number) + ". " + statement + "\n" + "No response. " + "\n"
+            opinions.append("overslaan")
+            continue
+        print("Response: "+ response_text)
+        classified = zero_shot_stance(response_text)
+        stance = classified[0]
+        scores = classified[1]
+        print("Stance: " + stance)
+        print("Scores: " + scores)
+        results = results + str(number) + ". " + statement + "\n" + "Response: "+ response_text + "\n" + "Stance: " + stance + "\n" + "Scores: " + scores + "\n"
+
+        if stance == "agree":
+            opinions.append("eens")
+        elif stance == "disagree":
+            opinions.append("oneens")
+        elif stance == "no opinion":
+            opinions.append("geen_van_beide")
         else:
-            results.append("overslaan")
-        print(results)
-    
-    return results
+            opinions.append("overslaan")
+
+    with open(f'{model}_opinions.json', 'w') as json_file:
+        json.dump(opinions, json_file)    
+
+    with open(f"{model}_results.txt", "a") as myfile:
+        myfile.write(results)
 
 if __name__ == "__main__":
     content = sys.argv[1] if len(sys.argv) > 1 else None
 
-    i = 0
-    for statement in statements:
-        i = i + 1
-        print(i)
-        print(statement)
-        response_text = get_completion(statement)
-        # get the json response from the response text that is enclosed between { and }
-        response_text = response_text[response_text.find("{"):response_text.find("}")+1]
-        # and parse it to a dictionary
-        response_text = eval(response_text)
-        print(response_text)
-        # save the number, statement and response to a text file
-        with open("stemwijzer_results.txt", "a") as myfile:
-            myfile.write(str(i) + "\n")
-            myfile.write(statement + "\n")
-            myfile.write(str(response_text) + "\n")
-            myfile.write("\n")
+    # create a timestamp to create a folder where we will move the created opinions and results files
+    now = datetime.datetime.now()
+    now = now.strftime("%Y-%m-%d_%H-%M-%S")
+
+    # create a folder with the timestamp as name
+    os.mkdir(now)
+
+    # for model in models:
+    #     get_results(model)
+    get_results("llama")
+
+    # move the created opinions and results files to the created folder
+    for model in models:
+        os.rename(f"{model}_opinions.json", f"{now}/{model}_opinions.json")
+        os.rename(f"{model}_results.txt", f"{now}/{model}_results.txt")
