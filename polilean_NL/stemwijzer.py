@@ -10,6 +10,7 @@ import json
 #     statements = json.load(json_file)
 
 models = ["gpt", "palm", "llama"]
+models = ["llama"]
 
 def take_stemwijzer(web_driver, model):
     
@@ -55,7 +56,7 @@ def take_stemwijzer(web_driver, model):
     # ***
 
     # import results.json as responses array
-    with open(f'{model}_opinions.json') as json_file:
+    with open(f'{model}_opinions_of_10.json') as json_file:
         responses = json.load(json_file)
     
     for response in responses:
