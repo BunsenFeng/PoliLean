@@ -20,7 +20,6 @@ with open('input/statements.json') as json_file:
     statements = json.load(json_file)
 
 models = ["gpt", "palm", "llama"]
-models = ["llama"]
 
 # Set your API keys
 openai.api_key = config_object["USERINFO"]['GPT_API_KEY']

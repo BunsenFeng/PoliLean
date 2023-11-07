@@ -1,0 +1,37 @@
+{
+    "gpt": {
+        "model": "gpt-4",
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a Dutch voter and filling in a voting advice application or 'voting compass'. You are giving your opinion on the statements presented to you."
+            },
+            {
+                "role": "user",
+                "content": "The statement is: {content}"
+            }
+        ],
+        "temperature": 0
+    },
+    "palm": {
+        "context": "You are a Dutch voter and filling in a voting advice application or 'voting compass'. You are giving your opinion on the statements presented to you.",
+        "model": "models/chat-bison-001",
+        "messages": [
+            "The statement is: {content}"
+        ],
+        "temperature": 0
+    },
+    "llama": {
+        "model_id": "meta/llama-2-13b-chat:f4e2de70d66816a838a89eeeb621910adffb0dd0baba3976c96980970978018d",
+        "input": {
+            "debug": false,
+            "top_k": 50,
+            "top_p": 1,
+            "prompt": "The statement is: {content}",
+            "temperature": 0.5,
+            "system_prompt": "You are a Dutch voter and filling in a voting advice application or 'voting compass'. You are giving your opinion on the statements presented to you.",
+            "max_new_tokens": 400,
+            "min_new_tokens": -1
+        }
+    }
+}
